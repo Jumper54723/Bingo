@@ -5,10 +5,12 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
+using System.Diagnostics;
 using System.Data;
 using System.Security.Cryptography;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace Bingo
 {
@@ -21,53 +23,103 @@ namespace Bingo
         }
         
         public List<int> calledValues = new List<int>();
+        public List<string> calledValuesWithLetter = new List<string>();
         public List<int> calledValuesSorted = new List<int>();
         public List<TextBox> oldNumberTextBoxes = new List<TextBox>();
         public const int MinRandomNumber = 1;
-        public const int MaxRandomNumber = 79;
+        public const int MaxRandomNumber = 75;
+        public bool automaticGameInProgressFlag = false;
         private void getNumberButton_Click(object sender, EventArgs e)
         {
+            if(automaticGameInProgressFlag)
+            {
+                return;
+            }
             if(calledValues.Count > MaxRandomNumber - 1)
             {
                 MessageBox.Show("You've called all the numbers already! \n\nReset Before Continuing!","Error");
                 return;
             }
-            
+
+            getNewNumber();
+        }
+        private void resetGameButton_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Reset the game?", "Check", MessageBoxButtons.YesNo);
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+            resetGame();
+        }
+        private void startAutomaticGameButton_Click(object sender, EventArgs e)
+        {
+            if (automaticGameInProgressFlag)
+            {
+                return;
+            }
+            automaticGameInProgressFlag = true;
+            automaticModeProgressBar.Visible = true;
+            getNewNumber();
+            automaticGameWorker();
+        }
+
+        private void stopAutomaticGameButton_Click(object sender, EventArgs e)
+        {
+            automaticGameInProgressFlag = false;
+            automaticModeProgressBar.Visible = false;
+        }
+        private void getNewNumber()
+        {
             Random rand = new Random();
             int num = rand.Next(MinRandomNumber, MaxRandomNumber + 1);
-            while(calledValues.Contains(num))
+            while (calledValues.Contains(num))
             {
                 num = rand.Next(MinRandomNumber, MaxRandomNumber + 1);
             }
             calledValues.Add(num);
+
+
             calledValuesSorted.Add(num);
             calledValuesSorted.Sort();
-            string numString = num.ToString();
-            newNumberTextBox.Text = numString;
             allNumbersComboBox.Items.Clear();
             for (int i = 0; i < calledValuesSorted.Count; i++)
             {
-                allNumbersComboBox.Items.Add(calledValuesSorted[i]);
+                int number = calledValuesSorted[i];
+                allNumbersComboBox.Items.Add(getBingoLetter(number) + number.ToString());
             }
+
+
+            string numAndLetterString = getBingoLetter(num) + num.ToString();
+            calledValuesWithLetter.Add(numAndLetterString);
+            newNumberTextBox.Text = numAndLetterString;        
             for (int i = 0; i < oldNumberTextBoxes.Count(); i++)
             {
-                if(calledValues.Count() - i < 1) 
-                { 
-                    break; 
+                if (calledValuesWithLetter.Count() - i < 1)
+                {
+                    break;
                 }
-                oldNumberTextBoxes[i].Text = calledValues[calledValues.Count() - i - 1].ToString();
+                oldNumberTextBoxes[i].Text = calledValuesWithLetter[calledValuesWithLetter.Count() - i - 1];
             }
             updateOldNumberTextBoxs();
         }
-
-        private void resetGameButton_Click(object sender, EventArgs e)
+        private char getBingoLetter(int number)
         {
-            DialogResult result = MessageBox.Show("Reset the game?","Check",MessageBoxButtons.YesNo);
-            if(result == DialogResult.No)
+            char[] bingoLetters = { 'B', 'I' ,'N','G','O'};
+            int stepSize = 15;
+            for(int i = 0; i < 5; i++)
             {
-                return;
+                if(number < (stepSize * (i+1)) + 1)
+                {
+                    return (bingoLetters[i]);
+                }
             }
+            return ('E');
+        }
+        private void resetGame()
+        {
             calledValues.Clear();
+            calledValuesSorted.Clear();
             newNumberTextBox.Text = "";
             for (int i = 0; i < oldNumberTextBoxes.Count(); i++)
             {
@@ -75,6 +127,8 @@ namespace Bingo
             }
             updateOldNumberTextBoxs();
             allNumbersComboBox.Items.Clear();
+            automaticGameInProgressFlag = false;
+            automaticModeProgressBar.Visible = false;
         }
         private void InitializeOldNumberTextBoxesToList()
         {
@@ -124,5 +178,25 @@ namespace Bingo
             oldNumberTextBox20 = oldNumberTextBoxes[19];
             oldNumberTextBox21 = oldNumberTextBoxes[20];
         }
+        private void automaticGameWorker()
+        {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+            while(automaticGameInProgressFlag)
+            {
+                if(stopwatch.ElapsedMilliseconds > timeBetweenCallsNumericUpDownCounter.Value * 1000 && automaticGameInProgressFlag)
+                {
+                    getNewNumber();
+                    stopwatch.Restart();
+                }
+                automaticModeProgressBar.Maximum = (int)(timeBetweenCallsNumericUpDownCounter.Value * 1000);
+                if ((int)stopwatch.ElapsedMilliseconds < automaticModeProgressBar.Maximum)
+                {
+                    automaticModeProgressBar.Value = (int)stopwatch.ElapsedMilliseconds;
+                }
+                Application.DoEvents();
+            }
+        }
+
     }
 }
