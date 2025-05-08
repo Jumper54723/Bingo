@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.getNumberButton = new System.Windows.Forms.Button();
             this.resetGameButton = new System.Windows.Forms.Button();
             this.newNumberTextBox = new System.Windows.Forms.TextBox();
@@ -58,14 +59,19 @@
             this.timeBetweenCallsNumericUpDownCounter = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.automaticModeProgressBar = new System.Windows.Forms.ProgressBar();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.bingoCardGeneratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.timeBetweenCallsNumericUpDownCounter)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // getNumberButton
             // 
             this.getNumberButton.BackColor = System.Drawing.SystemColors.ControlDark;
             this.getNumberButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.getNumberButton.Location = new System.Drawing.Point(28, 21);
+            this.getNumberButton.Location = new System.Drawing.Point(28, 42);
             this.getNumberButton.Name = "getNumberButton";
             this.getNumberButton.Size = new System.Drawing.Size(275, 122);
             this.getNumberButton.TabIndex = 0;
@@ -77,7 +83,7 @@
             // 
             this.resetGameButton.BackColor = System.Drawing.SystemColors.ControlDark;
             this.resetGameButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resetGameButton.Location = new System.Drawing.Point(28, 165);
+            this.resetGameButton.Location = new System.Drawing.Point(28, 186);
             this.resetGameButton.Name = "resetGameButton";
             this.resetGameButton.Size = new System.Drawing.Size(275, 122);
             this.resetGameButton.TabIndex = 1;
@@ -89,7 +95,7 @@
             // 
             this.newNumberTextBox.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.newNumberTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 216F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newNumberTextBox.Location = new System.Drawing.Point(634, 21);
+            this.newNumberTextBox.Location = new System.Drawing.Point(634, 42);
             this.newNumberTextBox.Name = "newNumberTextBox";
             this.newNumberTextBox.Size = new System.Drawing.Size(584, 333);
             this.newNumberTextBox.TabIndex = 2;
@@ -98,7 +104,7 @@
             // 
             this.oldNumberTextBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.oldNumberTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 63.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oldNumberTextBox1.Location = new System.Drawing.Point(28, 387);
+            this.oldNumberTextBox1.Location = new System.Drawing.Point(28, 408);
             this.oldNumberTextBox1.Name = "oldNumberTextBox1";
             this.oldNumberTextBox1.Size = new System.Drawing.Size(180, 104);
             this.oldNumberTextBox1.TabIndex = 3;
@@ -107,7 +113,7 @@
             // 
             this.oldNumberTextBox2.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.oldNumberTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 63.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oldNumberTextBox2.Location = new System.Drawing.Point(230, 387);
+            this.oldNumberTextBox2.Location = new System.Drawing.Point(230, 408);
             this.oldNumberTextBox2.Name = "oldNumberTextBox2";
             this.oldNumberTextBox2.Size = new System.Drawing.Size(180, 104);
             this.oldNumberTextBox2.TabIndex = 4;
@@ -116,7 +122,7 @@
             // 
             this.oldNumberTextBox3.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.oldNumberTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 63.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oldNumberTextBox3.Location = new System.Drawing.Point(432, 387);
+            this.oldNumberTextBox3.Location = new System.Drawing.Point(432, 408);
             this.oldNumberTextBox3.Name = "oldNumberTextBox3";
             this.oldNumberTextBox3.Size = new System.Drawing.Size(180, 104);
             this.oldNumberTextBox3.TabIndex = 5;
@@ -125,7 +131,7 @@
             // 
             this.oldNumberTextBox4.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.oldNumberTextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 63.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oldNumberTextBox4.Location = new System.Drawing.Point(634, 387);
+            this.oldNumberTextBox4.Location = new System.Drawing.Point(634, 408);
             this.oldNumberTextBox4.Name = "oldNumberTextBox4";
             this.oldNumberTextBox4.Size = new System.Drawing.Size(180, 104);
             this.oldNumberTextBox4.TabIndex = 6;
@@ -134,7 +140,7 @@
             // 
             this.oldNumberTextBox5.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.oldNumberTextBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 63.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oldNumberTextBox5.Location = new System.Drawing.Point(836, 387);
+            this.oldNumberTextBox5.Location = new System.Drawing.Point(836, 408);
             this.oldNumberTextBox5.Name = "oldNumberTextBox5";
             this.oldNumberTextBox5.Size = new System.Drawing.Size(180, 104);
             this.oldNumberTextBox5.TabIndex = 7;
@@ -143,7 +149,7 @@
             // 
             this.oldNumberTextBox6.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.oldNumberTextBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 63.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oldNumberTextBox6.Location = new System.Drawing.Point(1038, 387);
+            this.oldNumberTextBox6.Location = new System.Drawing.Point(1038, 408);
             this.oldNumberTextBox6.Name = "oldNumberTextBox6";
             this.oldNumberTextBox6.Size = new System.Drawing.Size(180, 104);
             this.oldNumberTextBox6.TabIndex = 8;
@@ -152,7 +158,7 @@
             // 
             this.oldNumberTextBox7.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.oldNumberTextBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 63.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oldNumberTextBox7.Location = new System.Drawing.Point(1240, 387);
+            this.oldNumberTextBox7.Location = new System.Drawing.Point(1240, 408);
             this.oldNumberTextBox7.Name = "oldNumberTextBox7";
             this.oldNumberTextBox7.Size = new System.Drawing.Size(180, 104);
             this.oldNumberTextBox7.TabIndex = 9;
@@ -161,16 +167,16 @@
             // 
             this.allNumbersComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.allNumbersComboBox.FormattingEnabled = true;
-            this.allNumbersComboBox.Location = new System.Drawing.Point(28, 303);
+            this.allNumbersComboBox.Location = new System.Drawing.Point(155, 327);
             this.allNumbersComboBox.Name = "allNumbersComboBox";
-            this.allNumbersComboBox.Size = new System.Drawing.Size(275, 63);
+            this.allNumbersComboBox.Size = new System.Drawing.Size(148, 63);
             this.allNumbersComboBox.TabIndex = 10;
             // 
             // oldNumberTextBox9
             // 
             this.oldNumberTextBox9.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.oldNumberTextBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 63.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oldNumberTextBox9.Location = new System.Drawing.Point(230, 521);
+            this.oldNumberTextBox9.Location = new System.Drawing.Point(230, 542);
             this.oldNumberTextBox9.Name = "oldNumberTextBox9";
             this.oldNumberTextBox9.Size = new System.Drawing.Size(180, 104);
             this.oldNumberTextBox9.TabIndex = 12;
@@ -179,7 +185,7 @@
             // 
             this.oldNumberTextBox8.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.oldNumberTextBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 63.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oldNumberTextBox8.Location = new System.Drawing.Point(28, 521);
+            this.oldNumberTextBox8.Location = new System.Drawing.Point(28, 542);
             this.oldNumberTextBox8.Name = "oldNumberTextBox8";
             this.oldNumberTextBox8.Size = new System.Drawing.Size(180, 104);
             this.oldNumberTextBox8.TabIndex = 11;
@@ -188,7 +194,7 @@
             // 
             this.oldNumberTextBox21.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.oldNumberTextBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 63.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oldNumberTextBox21.Location = new System.Drawing.Point(1240, 657);
+            this.oldNumberTextBox21.Location = new System.Drawing.Point(1240, 678);
             this.oldNumberTextBox21.Name = "oldNumberTextBox21";
             this.oldNumberTextBox21.Size = new System.Drawing.Size(180, 104);
             this.oldNumberTextBox21.TabIndex = 24;
@@ -197,7 +203,7 @@
             // 
             this.oldNumberTextBox20.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.oldNumberTextBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 63.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oldNumberTextBox20.Location = new System.Drawing.Point(1038, 657);
+            this.oldNumberTextBox20.Location = new System.Drawing.Point(1038, 678);
             this.oldNumberTextBox20.Name = "oldNumberTextBox20";
             this.oldNumberTextBox20.Size = new System.Drawing.Size(180, 104);
             this.oldNumberTextBox20.TabIndex = 23;
@@ -206,7 +212,7 @@
             // 
             this.oldNumberTextBox19.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.oldNumberTextBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 63.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oldNumberTextBox19.Location = new System.Drawing.Point(836, 657);
+            this.oldNumberTextBox19.Location = new System.Drawing.Point(836, 678);
             this.oldNumberTextBox19.Name = "oldNumberTextBox19";
             this.oldNumberTextBox19.Size = new System.Drawing.Size(180, 104);
             this.oldNumberTextBox19.TabIndex = 22;
@@ -215,7 +221,7 @@
             // 
             this.oldNumberTextBox18.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.oldNumberTextBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 63.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oldNumberTextBox18.Location = new System.Drawing.Point(634, 657);
+            this.oldNumberTextBox18.Location = new System.Drawing.Point(634, 678);
             this.oldNumberTextBox18.Name = "oldNumberTextBox18";
             this.oldNumberTextBox18.Size = new System.Drawing.Size(180, 104);
             this.oldNumberTextBox18.TabIndex = 21;
@@ -224,7 +230,7 @@
             // 
             this.oldNumberTextBox17.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.oldNumberTextBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 63.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oldNumberTextBox17.Location = new System.Drawing.Point(432, 657);
+            this.oldNumberTextBox17.Location = new System.Drawing.Point(432, 678);
             this.oldNumberTextBox17.Name = "oldNumberTextBox17";
             this.oldNumberTextBox17.Size = new System.Drawing.Size(180, 104);
             this.oldNumberTextBox17.TabIndex = 20;
@@ -233,7 +239,7 @@
             // 
             this.oldNumberTextBox16.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.oldNumberTextBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 63.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oldNumberTextBox16.Location = new System.Drawing.Point(230, 657);
+            this.oldNumberTextBox16.Location = new System.Drawing.Point(230, 678);
             this.oldNumberTextBox16.Name = "oldNumberTextBox16";
             this.oldNumberTextBox16.Size = new System.Drawing.Size(180, 104);
             this.oldNumberTextBox16.TabIndex = 19;
@@ -242,7 +248,7 @@
             // 
             this.oldNumberTextBox15.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.oldNumberTextBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 63.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oldNumberTextBox15.Location = new System.Drawing.Point(28, 657);
+            this.oldNumberTextBox15.Location = new System.Drawing.Point(28, 678);
             this.oldNumberTextBox15.Name = "oldNumberTextBox15";
             this.oldNumberTextBox15.Size = new System.Drawing.Size(180, 104);
             this.oldNumberTextBox15.TabIndex = 18;
@@ -251,7 +257,7 @@
             // 
             this.oldNumberTextBox10.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.oldNumberTextBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 63.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oldNumberTextBox10.Location = new System.Drawing.Point(432, 521);
+            this.oldNumberTextBox10.Location = new System.Drawing.Point(432, 542);
             this.oldNumberTextBox10.Name = "oldNumberTextBox10";
             this.oldNumberTextBox10.Size = new System.Drawing.Size(180, 104);
             this.oldNumberTextBox10.TabIndex = 13;
@@ -260,7 +266,7 @@
             // 
             this.oldNumberTextBox11.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.oldNumberTextBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 63.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oldNumberTextBox11.Location = new System.Drawing.Point(634, 521);
+            this.oldNumberTextBox11.Location = new System.Drawing.Point(634, 542);
             this.oldNumberTextBox11.Name = "oldNumberTextBox11";
             this.oldNumberTextBox11.Size = new System.Drawing.Size(180, 104);
             this.oldNumberTextBox11.TabIndex = 14;
@@ -269,7 +275,7 @@
             // 
             this.oldNumberTextBox12.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.oldNumberTextBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 63.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oldNumberTextBox12.Location = new System.Drawing.Point(836, 521);
+            this.oldNumberTextBox12.Location = new System.Drawing.Point(836, 542);
             this.oldNumberTextBox12.Name = "oldNumberTextBox12";
             this.oldNumberTextBox12.Size = new System.Drawing.Size(180, 104);
             this.oldNumberTextBox12.TabIndex = 15;
@@ -278,7 +284,7 @@
             // 
             this.oldNumberTextBox13.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.oldNumberTextBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 63.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oldNumberTextBox13.Location = new System.Drawing.Point(1038, 521);
+            this.oldNumberTextBox13.Location = new System.Drawing.Point(1038, 542);
             this.oldNumberTextBox13.Name = "oldNumberTextBox13";
             this.oldNumberTextBox13.Size = new System.Drawing.Size(180, 104);
             this.oldNumberTextBox13.TabIndex = 16;
@@ -287,7 +293,7 @@
             // 
             this.oldNumberTextBox14.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.oldNumberTextBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 63.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oldNumberTextBox14.Location = new System.Drawing.Point(1240, 521);
+            this.oldNumberTextBox14.Location = new System.Drawing.Point(1240, 542);
             this.oldNumberTextBox14.Name = "oldNumberTextBox14";
             this.oldNumberTextBox14.Size = new System.Drawing.Size(180, 104);
             this.oldNumberTextBox14.TabIndex = 17;
@@ -296,7 +302,7 @@
             // 
             this.startAutomaticGameButton.BackColor = System.Drawing.SystemColors.ControlDark;
             this.startAutomaticGameButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startAutomaticGameButton.Location = new System.Drawing.Point(353, 58);
+            this.startAutomaticGameButton.Location = new System.Drawing.Point(353, 79);
             this.startAutomaticGameButton.Name = "startAutomaticGameButton";
             this.startAutomaticGameButton.Size = new System.Drawing.Size(242, 39);
             this.startAutomaticGameButton.TabIndex = 25;
@@ -308,7 +314,7 @@
             // 
             this.stopAutomaticGameButton.BackColor = System.Drawing.SystemColors.ControlDark;
             this.stopAutomaticGameButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stopAutomaticGameButton.Location = new System.Drawing.Point(353, 116);
+            this.stopAutomaticGameButton.Location = new System.Drawing.Point(353, 137);
             this.stopAutomaticGameButton.Name = "stopAutomaticGameButton";
             this.stopAutomaticGameButton.Size = new System.Drawing.Size(242, 39);
             this.stopAutomaticGameButton.TabIndex = 26;
@@ -319,7 +325,7 @@
             // timeBetweenCallsNumericUpDownCounter
             // 
             this.timeBetweenCallsNumericUpDownCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timeBetweenCallsNumericUpDownCounter.Location = new System.Drawing.Point(535, 173);
+            this.timeBetweenCallsNumericUpDownCounter.Location = new System.Drawing.Point(535, 194);
             this.timeBetweenCallsNumericUpDownCounter.Maximum = new decimal(new int[] {
             300,
             0,
@@ -343,7 +349,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(352, 176);
+            this.label1.Location = new System.Drawing.Point(352, 197);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(177, 20);
             this.label1.TabIndex = 28;
@@ -351,18 +357,61 @@
             // 
             // automaticModeProgressBar
             // 
-            this.automaticModeProgressBar.Location = new System.Drawing.Point(353, 215);
+            this.automaticModeProgressBar.Location = new System.Drawing.Point(353, 236);
             this.automaticModeProgressBar.Name = "automaticModeProgressBar";
             this.automaticModeProgressBar.Size = new System.Drawing.Size(242, 39);
             this.automaticModeProgressBar.TabIndex = 29;
             this.automaticModeProgressBar.Visible = false;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripDropDownButton1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1435, 25);
+            this.toolStrip1.TabIndex = 30;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bingoCardGeneratorToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(52, 22);
+            this.toolStripDropDownButton1.Text = "Tools";
+            // 
+            // bingoCardGeneratorToolStripMenuItem
+            // 
+            this.bingoCardGeneratorToolStripMenuItem.Name = "bingoCardGeneratorToolStripMenuItem";
+            this.bingoCardGeneratorToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.bingoCardGeneratorToolStripMenuItem.Text = "Bingo Card Generator";
+            this.bingoCardGeneratorToolStripMenuItem.Click += new System.EventHandler(this.bingoCardGeneratorToolStripMenuItem_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(28, 348);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(125, 20);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "Called Numbers:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1435, 799);
+            this.ClientSize = new System.Drawing.Size(1435, 808);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.automaticModeProgressBar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.timeBetweenCallsNumericUpDownCounter);
@@ -396,6 +445,8 @@
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.timeBetweenCallsNumericUpDownCounter)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -433,6 +484,10 @@
         private System.Windows.Forms.NumericUpDown timeBetweenCallsNumericUpDownCounter;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ProgressBar automaticModeProgressBar;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem bingoCardGeneratorToolStripMenuItem;
+        private System.Windows.Forms.Label label2;
     }
 }
 

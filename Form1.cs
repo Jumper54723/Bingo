@@ -198,5 +198,10 @@ namespace Bingo
             }
         }
 
+        private void bingoCardGeneratorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Bingo_Card_Generator newform = new Bingo_Card_Generator();
+            newform.Show();
+        }
     }
 }
