@@ -64,6 +64,10 @@
             this.bingoCardGeneratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printableBingoCardMakerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
+            this.setupAutomaticWinnerCheckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.automaticallyCheckForWinningCardsCheckBox = new System.Windows.Forms.CheckBox();
+            this.winningCardsComboBox = new System.Windows.Forms.ComboBox();
+            this.numberOfWinnersLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.timeBetweenCallsNumericUpDownCounter)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -303,7 +307,7 @@
             // 
             this.startAutomaticGameButton.BackColor = System.Drawing.SystemColors.ControlDark;
             this.startAutomaticGameButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startAutomaticGameButton.Location = new System.Drawing.Point(353, 79);
+            this.startAutomaticGameButton.Location = new System.Drawing.Point(349, 42);
             this.startAutomaticGameButton.Name = "startAutomaticGameButton";
             this.startAutomaticGameButton.Size = new System.Drawing.Size(242, 39);
             this.startAutomaticGameButton.TabIndex = 25;
@@ -315,7 +319,7 @@
             // 
             this.stopAutomaticGameButton.BackColor = System.Drawing.SystemColors.ControlDark;
             this.stopAutomaticGameButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stopAutomaticGameButton.Location = new System.Drawing.Point(353, 137);
+            this.stopAutomaticGameButton.Location = new System.Drawing.Point(349, 100);
             this.stopAutomaticGameButton.Name = "stopAutomaticGameButton";
             this.stopAutomaticGameButton.Size = new System.Drawing.Size(242, 39);
             this.stopAutomaticGameButton.TabIndex = 26;
@@ -326,7 +330,7 @@
             // timeBetweenCallsNumericUpDownCounter
             // 
             this.timeBetweenCallsNumericUpDownCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timeBetweenCallsNumericUpDownCounter.Location = new System.Drawing.Point(535, 194);
+            this.timeBetweenCallsNumericUpDownCounter.Location = new System.Drawing.Point(531, 157);
             this.timeBetweenCallsNumericUpDownCounter.Maximum = new decimal(new int[] {
             300,
             0,
@@ -350,7 +354,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(352, 197);
+            this.label1.Location = new System.Drawing.Point(348, 160);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(177, 20);
             this.label1.TabIndex = 28;
@@ -358,7 +362,7 @@
             // 
             // automaticModeProgressBar
             // 
-            this.automaticModeProgressBar.Location = new System.Drawing.Point(353, 236);
+            this.automaticModeProgressBar.Location = new System.Drawing.Point(349, 199);
             this.automaticModeProgressBar.Name = "automaticModeProgressBar";
             this.automaticModeProgressBar.Size = new System.Drawing.Size(242, 39);
             this.automaticModeProgressBar.TabIndex = 29;
@@ -382,7 +386,8 @@
             this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bingoCardGeneratorToolStripMenuItem,
-            this.printableBingoCardMakerToolStripMenuItem});
+            this.printableBingoCardMakerToolStripMenuItem,
+            this.setupAutomaticWinnerCheckToolStripMenuItem});
             this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
@@ -392,14 +397,14 @@
             // bingoCardGeneratorToolStripMenuItem
             // 
             this.bingoCardGeneratorToolStripMenuItem.Name = "bingoCardGeneratorToolStripMenuItem";
-            this.bingoCardGeneratorToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.bingoCardGeneratorToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
             this.bingoCardGeneratorToolStripMenuItem.Text = "Bingo Card CSV Generator";
             this.bingoCardGeneratorToolStripMenuItem.Click += new System.EventHandler(this.bingoCardGeneratorToolStripMenuItem_Click);
             // 
             // printableBingoCardMakerToolStripMenuItem
             // 
             this.printableBingoCardMakerToolStripMenuItem.Name = "printableBingoCardMakerToolStripMenuItem";
-            this.printableBingoCardMakerToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.printableBingoCardMakerToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
             this.printableBingoCardMakerToolStripMenuItem.Text = "Printable Bingo Card Maker";
             this.printableBingoCardMakerToolStripMenuItem.Click += new System.EventHandler(this.printableBingoCardMakerToolStripMenuItem_Click);
             // 
@@ -413,12 +418,53 @@
             this.label2.TabIndex = 31;
             this.label2.Text = "Called Numbers:";
             // 
+            // setupAutomaticWinnerCheckToolStripMenuItem
+            // 
+            this.setupAutomaticWinnerCheckToolStripMenuItem.Name = "setupAutomaticWinnerCheckToolStripMenuItem";
+            this.setupAutomaticWinnerCheckToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
+            this.setupAutomaticWinnerCheckToolStripMenuItem.Text = "Setup Automatic Winner Check";
+            this.setupAutomaticWinnerCheckToolStripMenuItem.Click += new System.EventHandler(this.setupAutomaticWinnerCheckToolStripMenuItem_Click);
+            // 
+            // automaticallyCheckForWinningCardsCheckBox
+            // 
+            this.automaticallyCheckForWinningCardsCheckBox.AutoSize = true;
+            this.automaticallyCheckForWinningCardsCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.automaticallyCheckForWinningCardsCheckBox.Location = new System.Drawing.Point(352, 259);
+            this.automaticallyCheckForWinningCardsCheckBox.Name = "automaticallyCheckForWinningCardsCheckBox";
+            this.automaticallyCheckForWinningCardsCheckBox.Size = new System.Drawing.Size(175, 44);
+            this.automaticallyCheckForWinningCardsCheckBox.TabIndex = 32;
+            this.automaticallyCheckForWinningCardsCheckBox.Text = "Automatically Check \r\nFor Winning Cards";
+            this.automaticallyCheckForWinningCardsCheckBox.UseVisualStyleBackColor = true;
+            this.automaticallyCheckForWinningCardsCheckBox.CheckedChanged += new System.EventHandler(this.automaticallyCheckForWinningCardsCheckBox_CheckedChanged);
+            // 
+            // winningCardsComboBox
+            // 
+            this.winningCardsComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.winningCardsComboBox.FormattingEnabled = true;
+            this.winningCardsComboBox.Location = new System.Drawing.Point(349, 309);
+            this.winningCardsComboBox.Name = "winningCardsComboBox";
+            this.winningCardsComboBox.Size = new System.Drawing.Size(242, 28);
+            this.winningCardsComboBox.TabIndex = 33;
+            // 
+            // numberOfWinnersLabel
+            // 
+            this.numberOfWinnersLabel.AutoSize = true;
+            this.numberOfWinnersLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numberOfWinnersLabel.Location = new System.Drawing.Point(348, 348);
+            this.numberOfWinnersLabel.Name = "numberOfWinnersLabel";
+            this.numberOfWinnersLabel.Size = new System.Drawing.Size(194, 20);
+            this.numberOfWinnersLabel.TabIndex = 34;
+            this.numberOfWinnersLabel.Text = "Number of Winning Cards:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1435, 808);
+            this.Controls.Add(this.numberOfWinnersLabel);
+            this.Controls.Add(this.winningCardsComboBox);
+            this.Controls.Add(this.automaticallyCheckForWinningCardsCheckBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.automaticModeProgressBar);
@@ -453,6 +499,7 @@
             this.Controls.Add(this.getNumberButton);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.timeBetweenCallsNumericUpDownCounter)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -498,6 +545,10 @@
         private System.Windows.Forms.ToolStripMenuItem bingoCardGeneratorToolStripMenuItem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripMenuItem printableBingoCardMakerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem setupAutomaticWinnerCheckToolStripMenuItem;
+        private System.Windows.Forms.CheckBox automaticallyCheckForWinningCardsCheckBox;
+        private System.Windows.Forms.ComboBox winningCardsComboBox;
+        private System.Windows.Forms.Label numberOfWinnersLabel;
     }
 }
 

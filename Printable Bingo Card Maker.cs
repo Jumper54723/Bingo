@@ -160,8 +160,8 @@ namespace Bingo
                 BingoCard currentBingoCard = new BingoCard();
                 currentBingoCard.cardName = allLines[rowNumber];
                 currentBingoCard.cardNumber = int.Parse(Regex.Match(currentBingoCard.cardName, @"\d+$", RegexOptions.RightToLeft).Value);
-                currentBingoCard.bingoNumberRows = numberOfRowsPerBingoCard; 
-                currentBingoCard.bingoNumberColumns = numberOfColumnsInFile; 
+                currentBingoCard.bingoNumberOfRows = numberOfRowsPerBingoCard; 
+                currentBingoCard.bingoNumberOfColumns = numberOfColumnsInFile; 
                 rowNumber++;
                 currentBingoCard.bingoCardNumbers = new int[numberOfRowsPerBingoCard, numberOfColumnsInFile];
                 for (int bingoCardRowNumber = 0; bingoCardRowNumber < numberOfRowsPerBingoCard; bingoCardRowNumber++)
@@ -291,13 +291,13 @@ namespace Bingo
             table.Append(headerRow);
 
             // Add all other Rows and Columns to Table
-            int centerRow = (int)Math.Floor((double)currentBingoCard.bingoNumberRows / 2);
-            int centerColumn = (int)Math.Floor((double)currentBingoCard.bingoNumberRows / 2);
-            for (int rowNumber = 0; rowNumber < currentBingoCard.bingoNumberRows; rowNumber++)
+            int centerRow = (int)Math.Floor((double)currentBingoCard.bingoNumberOfRows / 2);
+            int centerColumn = (int)Math.Floor((double)currentBingoCard.bingoNumberOfColumns / 2);
+            for (int rowNumber = 0; rowNumber < currentBingoCard.bingoNumberOfRows; rowNumber++)
             {
                 TableRow row = new TableRow();
 
-                for (int columnNumber = 0; columnNumber < currentBingoCard.bingoNumberColumns; columnNumber++)
+                for (int columnNumber = 0; columnNumber < currentBingoCard.bingoNumberOfColumns; columnNumber++)
                 {
                     string cellString = currentBingoCard.bingoCardNumbers[rowNumber, columnNumber].ToString();
                     if(rowNumber == centerRow && columnNumber == centerColumn)

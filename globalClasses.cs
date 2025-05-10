@@ -15,7 +15,7 @@ namespace Bingo
         public string cardName;
         public int cardNumber;
         public int[,] bingoCardNumbers = new int[5, 5];
-        public int bingoNumberRows;
-        public int bingoNumberColumns;
+        public int bingoNumberOfRows;
+        public int bingoNumberOfColumns;
     }
 }
