@@ -62,6 +62,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.bingoCardGeneratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printableBingoCardMakerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.timeBetweenCallsNumericUpDownCounter)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -380,7 +381,8 @@
             this.toolStripDropDownButton1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bingoCardGeneratorToolStripMenuItem});
+            this.bingoCardGeneratorToolStripMenuItem,
+            this.printableBingoCardMakerToolStripMenuItem});
             this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
@@ -390,9 +392,16 @@
             // bingoCardGeneratorToolStripMenuItem
             // 
             this.bingoCardGeneratorToolStripMenuItem.Name = "bingoCardGeneratorToolStripMenuItem";
-            this.bingoCardGeneratorToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
-            this.bingoCardGeneratorToolStripMenuItem.Text = "Bingo Card Generator";
+            this.bingoCardGeneratorToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.bingoCardGeneratorToolStripMenuItem.Text = "Bingo Card CSV Generator";
             this.bingoCardGeneratorToolStripMenuItem.Click += new System.EventHandler(this.bingoCardGeneratorToolStripMenuItem_Click);
+            // 
+            // printableBingoCardMakerToolStripMenuItem
+            // 
+            this.printableBingoCardMakerToolStripMenuItem.Name = "printableBingoCardMakerToolStripMenuItem";
+            this.printableBingoCardMakerToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.printableBingoCardMakerToolStripMenuItem.Text = "Printable Bingo Card Maker";
+            this.printableBingoCardMakerToolStripMenuItem.Click += new System.EventHandler(this.printableBingoCardMakerToolStripMenuItem_Click);
             // 
             // label2
             // 
@@ -488,6 +497,7 @@
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem bingoCardGeneratorToolStripMenuItem;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStripMenuItem printableBingoCardMakerToolStripMenuItem;
     }
 }
 

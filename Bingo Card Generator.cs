@@ -76,12 +76,6 @@ namespace Bingo
         { 
             1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
         };
-        private class BingoCard
-        {
-            public string cardName;
-            public int cardNumber;
-            public int[,] bingoCardNumbers = new int[5, 5];
-        }
         private Dictionary<int, BingoCard> bingoCards;
         private int matchCountMax;
         private void generateNumbersFor75Bingo()
@@ -161,6 +155,7 @@ namespace Bingo
                     return false;
                 }
             }
+
             return true;
         }
         private void printBingoCardsToCSV()

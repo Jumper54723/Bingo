@@ -8,9 +8,12 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using System.Diagnostics;
-using System.Data;
 using System.Security.Cryptography;
 using System.Runtime.InteropServices.ComTypes;
+using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Wordprocessing;
+using DocumentFormat.OpenXml;
+using System.Runtime.InteropServices;
 
 namespace Bingo
 {
@@ -203,5 +206,15 @@ namespace Bingo
             Bingo_Card_Generator newform = new Bingo_Card_Generator();
             newform.Show();
         }
+
+        private void printableBingoCardMakerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Printable_Bingo_Card_Maker newform = new Printable_Bingo_Card_Maker();
+            newform.Show();
+        }
+               
+
     }
+
+
 }
